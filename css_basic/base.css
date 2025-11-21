@@ -68,12 +68,13 @@ article {
 header {
 	border-bottom: 1px solid rgb(221,221,221);
 	transition: border-bottom-color 1s ease;
+	
 }
 header a {
 	color: rgba(0, 0, 0, 0.8);
 }
 aside {
-	background: #FAFAFA;
+	background: rgb(42, 149, 236);
 }
 aside p {
 	border: 1px solid #bbb;
