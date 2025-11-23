@@ -526,6 +526,113 @@ main section div:nth-child(2) p {
         width: 100%;
     }
 }
+/* FAQ Section */
+
+/* ==============================
+   FAQ SECTION — Pixel-matched CSS
+   ============================== */
+
+.faq {
+    width: 100%;
+    padding: 140px 10% 100px;           /* generous top padding like the screenshot */
+    background-color: #ffffff;          /* white background as in screenshot */
+    font-family: "Open Sans", "Inter", Arial, sans-serif;
+    color: #111321;                     /* heading/main text color */
+    box-sizing: border-box;
+}
+
+/* Big centered title "F.A.Q." */
+.faq > h2 {
+    text-align: center;
+    font-size: 56px;                    /* large title size */
+    font-weight: 300;                   /* thin/light weight */
+    letter-spacing: 6px;                /* spaced letters with punctuation */
+    margin: 0 0 120px 0;                /* spacing below the title */
+    color: #111321;
+    line-height: 1;
+}
+
+/* CONTAINER for FAQ items - two columns with wide gap */
+.faq-items {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two equal columns */
+    grid-column-gap: 160px;                 /* wide horizontal spacing (matches screenshot) */
+    grid-row-gap: 110px;                    /* vertical spacing between rows */
+    align-items: start;
+}
+
+/* Individual item */
+.faq-item {
+    text-align: left;                 /* left aligned content inside each column */
+}
+
+/* Question heading inside each item */
+.faq-item h3 {
+    font-size: 16px;
+    font-weight: 700;                 /* bold, compact */
+    color: #161821;                   /* slightly darker than body text */
+    margin: 0 0 18px 0;
+}
+
+/* Answer paragraph */
+.faq-item p {
+    font-size: 15px;
+    line-height: 1.85;                /* roomy line-height to match screenshot */
+    color: #7b7f86;                   /* desaturated gray like screenshot */
+    max-width: 520px;                 /* limit line length to match screenshot column width */
+    margin: 0;
+}
+
+/* Small vertical spacer between items (if you want extra breathing room) */
+.faq-item + .faq-item {
+    margin-top: 0;
+}
+
+/* =========================
+   Responsive adjustments
+   ========================= */
+
+@media (max-width: 1100px) {
+    .faq {
+        padding: 100px 6% 80px;
+    }
+    .faq > h2 {
+        font-size: 48px;
+        margin-bottom: 80px;
+    }
+    .faq-items {
+        grid-column-gap: 80px;
+        grid-row-gap: 80px;
+    }
+    .faq-item p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    .faq {
+        padding: 80px 6% 60px;
+    }
+    .faq > h2 {
+        font-size: 40px;
+        letter-spacing: 4px;
+        margin-bottom: 60px;
+    }
+    .faq-items {
+        grid-template-columns: 1fr;   /* collapse to single column on small screens */
+        grid-column-gap: 0;
+        grid-row-gap: 48px;
+    }
+    .faq-item h3 {
+        font-size: 15px;
+    }
+    .faq-item p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}
 
 
 /* ======================================
