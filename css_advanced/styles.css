@@ -259,6 +259,170 @@ main section div:nth-child(2) p {
   }
 }
 
+/* ======================================
+   MOST POPULAR TUTORIALS — SECTION ONLY
+======================================= */
+
+.popular-tutorials {
+    width: 100%;
+    background: #FFFFFF;   /* same as card background */        
+    padding: 70px 0 80px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.popular-tutorials h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 55px;
+    color: #1A1A1A;
+}
+
+.popular-tutorials h2 .highlight {
+    color: #C17CFF;                
+    font-weight: 600;
+    font-size: 1.0em;
+}
+
+
+/* ===============================
+   GRID (Exact 4-column desktop)
+   =============================== */
+.popular-tutorials .tutorial-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    padding: 0 10px;
+}
+
+
+/* ===============================
+   CARD
+   =============================== */
+.popular-tutorials .thumbnail {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    padding-bottom: 15px;      /* compact height */
+}
+
+/* Image */
+.popular-tutorials .thumbnail img:first-child {
+    width: 100%;
+    height: 160px;              /* reduced for correct card height */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ===============================
+   PLAY BUTTON
+   =============================== */
+.popular-tutorials .play-overlay {
+    position: absolute;
+    top: 80px;                  /* perfectly centered for 160px image */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    padding: 12px;
+    backdrop-filter: blur(4px);
+}
+
+
+/* ===============================
+   TEXT CONTENT
+   =============================== */
+.popular-tutorials h3 {
+    margin: 16px 20px 6px;      
+    font-size: 17px;
+    color: #1A1A1A;
+    font-weight: 600;
+}
+
+.popular-tutorials .thumbnail > p {
+    margin: 0 20px 10px;        
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* ===============================
+   AUTHOR ROW
+   =============================== */
+.popular-tutorials .thumbnail > div:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    gap: 8px;                   /* tighter */
+    margin: 0 20px 12px;        /* reduced vertical spacing */
+}
+
+.popular-tutorials .thumbnail > div:nth-of-type(1) img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.popular-tutorials h4 {
+    font-size: 14px;
+    margin: 0;
+    color: #C17CFF;            
+    font-weight: 500;
+}
+
+
+/* ===============================
+   RATING
+   =============================== */
+.popular-tutorials .rating {
+    display: flex;
+    gap: 4px;
+    margin: 0 20px 6px;         /* tighter spacing */
+}
+
+.popular-tutorials .rating i {
+    color: #C17CFF;
+    font-size: 14px;
+}
+
+
+/* ===============================
+   DURATION (bottom right)
+   =============================== */
+.popular-tutorials .thumbnail > p:last-child {
+    margin: 0 20px;
+    text-align: right;
+    font-size: 13px;            /* exactly the screenshot size */
+    color: #666;
+}
+
+
+/* ===============================
+   RESPONSIVE ADJUSTMENTS
+   =============================== */
+@media (max-width: 1024px) {
+    .popular-tutorials .tutorial-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 650px) {
+    .popular-tutorials .tutorial-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
 
 /* ======================================
    RESPONSIVE DESIGN
