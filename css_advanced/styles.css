@@ -633,6 +633,99 @@ main section div:nth-child(2) p {
         line-height: 1.8;
     }
 }
+/* Footer Section*/
+/* Footer (pixel-accurate to provided screenshot) */
+.site-footer {
+  width: 100%;
+  background: #0B1626;              /* dark navy background from screenshot */
+  box-sizing: border-box;
+}
+
+/* Inner container centers content and constrains width */
+.site-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 6% ;                /* vertical padding approximates screenshot height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;                 /* visual height similar to screenshot */
+}
+
+/* Brand block (left) */
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Logo image */
+.brand__logo {
+  display: block;
+  width: 38px;                      /* approximate icon size from screenshot */
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Brand name / wordmark */
+.brand__name {
+  color: #FFFFFF;
+  font-size: 18px;                  /* matches bold small wordmark */
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Social icons (right) */
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* circular white buttons holding dark glyphs */
+.social__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFFFFF;              /* white circle as in screenshot */
+  text-decoration: none;
+  box-shadow: none;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Small SVG inside should be the dark navy color to match screenshot */
+.social__btn svg { display: block; }
+
+/* Hover/focus affordance */
+.social__btn:hover,
+.social__btn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(11,22,38,0.25);
+  outline: none;
+}
+
+/* Responsive behavior: center and stack items on small screens */
+@media (max-width: 640px) {
+  .site-footer__inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 5%;
+    min-height: auto;
+  }
+
+  .site-footer__brand { justify-content: center; }
+  .site-footer__social { justify-content: center; }
+}
+
+
+
 
 
 /* ======================================
