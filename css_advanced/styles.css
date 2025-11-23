@@ -423,6 +423,110 @@ main section div:nth-child(2) p {
     }
 }
 
+/* Register for Free  */
+
+.register {
+    width: 100%;
+    padding: 100px 0 120px;
+    background: #0B1626; /* dark navy from screenshot */
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+/* Title */
+.register h2 {
+    font-size: 36px;
+    margin-bottom: 80px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.register h2::before {
+    content: "Free ";
+    color: #C17CFF;
+    font-weight: 600;
+}
+
+/* ============================
+   FEATURES WRAPPER (HORIZONTAL)
+   ============================ */
+.register .features {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 90px;            /* perfect spacing from screenshot */
+    margin-bottom: 60px;
+}
+
+/* Single item */
+.register .features div {
+    width: 200px;        /* fixed width = consistent alignment */
+    text-align: center;
+}
+
+/* Icon */
+.register .features img {
+    width: 65px;
+    margin-bottom: 25px;
+}
+
+/* Title under icon */
+.register .features h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* Paragraph */
+.register .features p {
+    color: #cfd6df;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Button */
+.register button {
+    padding: 16px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background: #C17CFF;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.register button:hover {
+    background: #A75BFF;
+    transform: translateY(-2px);
+}
+.register .features div img {
+    width: 60px;          /* exact size seen in screenshot */
+    height: 60px;         /* equal width/height prevents distortion */
+    object-fit: contain;  /* keeps original proportions */
+    margin-bottom: 15px;  /* spacing below image */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .register .features {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .register .features div {
+        width: 45%;
+    }
+}
+
+@media (max-width: 550px) {
+    .register .features div {
+        width: 100%;
+    }
+}
+
 
 /* ======================================
    RESPONSIVE DESIGN
