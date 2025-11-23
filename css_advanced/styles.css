@@ -67,10 +67,17 @@ main section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url("images/Object.png") center/cover no-repeat; /* put your hero image here */
-    /* dark overlay */
     position: relative;
 }
+
+main section:first-of-type {
+    background-image: url("images/Object.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 
 /* dark overlay */
 main section::before {
@@ -174,6 +181,82 @@ main section div:nth-child(2) p {
     opacity: 0.8;
     line-height: 1.1;
     
+}
+
+/* ======================================
+   TESTIMONIAL SECTION ONLY
+======================================= */
+
+.testimonial {
+  min-height: 400px;   /* reset the inherited 100vh */
+  height: auto;       /* let content define height */
+  padding: 60px 20px;
+  background: #b14fff;
+  color: #fff;
+  font-family: sans-serif, Arial, ;
+}
+
+.testimonial__container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;                 /* reduced gap */
+}
+
+.testimonial__photo img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.testimonial__content {
+  flex: 1;
+}
+
+.testimonial__quote {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  line-height: 1.0;
+  font-style: italic;
+}
+
+.testimonial__name {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.testimonial__role {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .testimonial {
+    max-height: none;        /* allow natural height on small screens */
+    padding: 16px;
+  }
+
+  .testimonial__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial__photo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial__quote {
+    font-size: 0.9rem;
+  }
 }
 
 
