@@ -1,761 +1,95 @@
-/* ======================================
-   GLOBAL RESET
-======================================= */
+/* GLOBAL RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Arial", sans-serif;
-    color: white;
-    background: #000;
-}
-
-/* ======================================
-   HEADER + NAVIGATION
-======================================= */
-header {
-    width: 100%;
-    padding: 25px 80px;
-    position: absolute; /* sits on top of hero image */
-    top: 0;
-    left: 0;
-    z-index: 10;
-
-    background: transparent;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav img {
-    height: 40px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 0.85rem;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
-
-nav ul li a:hover {
-    opacity: 1;
-}
-
-/* ======================================
-   HERO SECTION
-======================================= */
-main section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-
-main section:first-of-type {
-    background-image: url("images/Object.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-
-
-/* dark overlay */
-main section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at center,
-        rgba(112,112,117,0.1),
-        rgba(5,10,25,0.9)
-    );
-    z-index: 1;
-}
-
-main section > div {
-    position: relative;
-    z-index: 2;
-}
-
-/* Main title */
-main h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    margin-bottom: 10px;
-}
-
-/* SMILES | GRIN | LAUGH */
-main section span {
-    margin: 0 10px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    opacity: 0.85;
-}
-
-/*Register button */
-main section button {
-    display: block;
-    width: auto;
-    margin: 30px auto;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(135deg, #b14fff, #b14fff);
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-main section button:hover {
-    opacity: 0.9;
-}
-
-/* ======================================
-   "LEARN FROM THE PROS"
-======================================= */
-main section h2 {
-    margin-top: 80px;
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-
-main section h2 .purple {
-    color: #bd70ff; /* purple highlight */
-    font-size: 1.8rem;
-    
-}
-
-
-main section div:nth-child(2) > div {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-main section div:nth-child(2) > div > div {
-    text-align: center;
-    width: 160px;
-}
-
-main section div:nth-child(2) img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-main section div:nth-child(2) h3 {
-    margin: 0px;
-    font-size: 1rem;
-    line-height: 1.2;
-}
-
-main section div:nth-child(2) p {
-    font-size: 0.9rem;
-    margin: 0px;
-    opacity: 0.8;
-    line-height: 1.1;
-    
-}
-
-/* ======================================
-   TESTIMONIAL SECTION ONLY
-======================================= */
-
-.testimonial {
-  min-height: 400px;   /* reset the inherited 100vh */
-  height: auto;       /* let content define height */
-  padding: 60px 20px;
-  background: #b14fff;
-  color: #fff;
-  font-family: sans-serif, Arial, ;
-}
-
-.testimonial__container {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 20px;                 /* reduced gap */
-}
-
-.testimonial__photo img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.25);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-.testimonial__content {
-  flex: 1;
-}
-
-.testimonial__quote {
-  margin: 0 0 8px 0;
-  font-size: 1.5rem;
-  line-height: 1.0;
-  font-style: italic;
-}
-
-.testimonial__name {
   margin: 0;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.testimonial__role {
-  margin: 2px 0 0;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.85);
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .testimonial {
-    max-height: none;        /* allow natural height on small screens */
-    padding: 16px;
-  }
-
-  .testimonial__container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .testimonial__photo img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 12px;
-  }
-
-  .testimonial__quote {
-    font-size: 0.9rem;
-  }
-}
-
-/* ======================================
-   MOST POPULAR TUTORIALS — SECTION ONLY
-======================================= */
-
-.popular-tutorials {
-    width: 100%;
-    background: #FFFFFF;   /* same as card background */        
-    padding: 70px 0 80px;
-    font-family: "Inter", sans-serif;
-    text-align: center;
-}
-
-.popular-tutorials h2 {
-    font-size: 32px;
-    font-weight: 300;
-    margin-bottom: 55px;
-    color: #1A1A1A;
-}
-
-.popular-tutorials h2 .highlight {
-    color: #C17CFF;                
-    font-weight: 600;
-    font-size: 1.0em;
-}
-
-
-/* ===============================
-   GRID (Exact 4-column desktop)
-   =============================== */
-.popular-tutorials .tutorial-grid {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
-    padding: 0 10px;
-}
-
-
-/* ===============================
-   CARD
-   =============================== */
-.popular-tutorials .thumbnail {
-    width: 100%;
-    background: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    overflow: hidden;
-    position: relative;
-    text-align: left;
-    padding-bottom: 15px;      /* compact height */
-}
-
-/* Image */
-.popular-tutorials .thumbnail img:first-child {
-    width: 100%;
-    height: 160px;              /* reduced for correct card height */
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-
-/* ===============================
-   PLAY BUTTON
-   =============================== */
-.popular-tutorials .play-overlay {
-    position: absolute;
-    top: 80px;                  /* perfectly centered for 160px image */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.85);
-    padding: 12px;
-    backdrop-filter: blur(4px);
-}
-
-
-/* ===============================
-   TEXT CONTENT
-   =============================== */
-.popular-tutorials h3 {
-    margin: 16px 20px 6px;      
-    font-size: 17px;
-    color: #1A1A1A;
-    font-weight: 600;
-}
-
-.popular-tutorials .thumbnail > p {
-    margin: 0 20px 10px;        
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-/* ===============================
-   AUTHOR ROW
-   =============================== */
-.popular-tutorials .thumbnail > div:nth-of-type(1) {
-    display: flex;
-    align-items: center;
-    gap: 8px;                   /* tighter */
-    margin: 0 20px 12px;        /* reduced vertical spacing */
-}
-
-.popular-tutorials .thumbnail > div:nth-of-type(1) img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-}
-
-.popular-tutorials h4 {
-    font-size: 14px;
-    margin: 0;
-    color: #C17CFF;            
-    font-weight: 500;
-}
-
-
-/* ===============================
-   RATING
-   =============================== */
-.popular-tutorials .rating {
-    display: flex;
-    gap: 4px;
-    margin: 0 20px 6px;         /* tighter spacing */
-}
-
-.popular-tutorials .rating i {
-    color: #C17CFF;
-    font-size: 14px;
-}
-
-
-/* ===============================
-   DURATION (bottom right)
-   =============================== */
-.popular-tutorials .thumbnail > p:last-child {
-    margin: 0 20px;
-    text-align: right;
-    font-size: 13px;            /* exactly the screenshot size */
-    color: #666;
-}
-
-
-/* ===============================
-   RESPONSIVE ADJUSTMENTS
-   =============================== */
-@media (max-width: 1024px) {
-    .popular-tutorials .tutorial-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-@media (max-width: 650px) {
-    .popular-tutorials .tutorial-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-}
-
-/* Register for Free  */
-
-.register {
-    width: 100%;
-    padding: 100px 0 120px;
-    background: #0B1626; /* dark navy from screenshot */
-    font-family: "Inter", sans-serif;
-    text-align: center;
-}
-
-/* Title */
-.register h2 {
-    font-size: 36px;
-    margin-bottom: 80px;
-    font-weight: 300;
-    color: #ffffff;
-}
-
-.register h2::before {
-    content: "Free ";
-    color: #C17CFF;
-    font-weight: 600;
-}
-
-/* ============================
-   FEATURES WRAPPER (HORIZONTAL)
-   ============================ */
-.register .features {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 90px;            /* perfect spacing from screenshot */
-    margin-bottom: 60px;
-}
-
-/* Single item */
-.register .features div {
-    width: 200px;        /* fixed width = consistent alignment */
-    text-align: center;
-}
-
-/* Icon */
-.register .features img {
-    width: 65px;
-    margin-bottom: 25px;
-}
-
-/* Title under icon */
-.register .features h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-/* Paragraph */
-.register .features p {
-    color: #cfd6df;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* Button */
-.register button {
-    padding: 16px 40px;
-    font-size: 14px;
-    font-weight: 600;
-    color: white;
-    background: #C17CFF;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.register button:hover {
-    background: #A75BFF;
-    transform: translateY(-2px);
-}
-.register .features div img {
-    width: 60px;          /* exact size seen in screenshot */
-    height: 60px;         /* equal width/height prevents distortion */
-    object-fit: contain;  /* keeps original proportions */
-    margin-bottom: 15px;  /* spacing below image */
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .register .features {
-        flex-wrap: wrap;
-        gap: 40px;
-    }
-
-    .register .features div {
-        width: 45%;
-    }
-}
-
-@media (max-width: 550px) {
-    .register .features div {
-        width: 100%;
-    }
-}
-/* FAQ Section */
-
-/* ==============================
-   FAQ SECTION — Pixel-matched CSS
-   ============================== */
-
-.faq {
-    width: 100%;
-    padding: 140px 10% 100px;           /* generous top padding like the screenshot */
-    background-color: #ffffff;          /* white background as in screenshot */
-    font-family: "Open Sans", "Inter", Arial, sans-serif;
-    color: #111321;                     /* heading/main text color */
-    box-sizing: border-box;
-}
-
-/* Big centered title "F.A.Q." */
-.faq > h2 {
-    text-align: center;
-    font-size: 56px;                    /* large title size */
-    font-weight: 300;                   /* thin/light weight */
-    letter-spacing: 6px;                /* spaced letters with punctuation */
-    margin: 0 0 120px 0;                /* spacing below the title */
-    color: #111321;
-    line-height: 1;
-}
-
-/* CONTAINER for FAQ items - two columns with wide gap */
-.faq-items {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* two equal columns */
-    grid-column-gap: 160px;                 /* wide horizontal spacing (matches screenshot) */
-    grid-row-gap: 110px;                    /* vertical spacing between rows */
-    align-items: start;
-}
-
-/* Individual item */
-.faq-item {
-    text-align: left;                 /* left aligned content inside each column */
-}
-
-/* Question heading inside each item */
-.faq-item h3 {
-    font-size: 16px;
-    font-weight: 700;                 /* bold, compact */
-    color: #161821;                   /* slightly darker than body text */
-    margin: 0 0 18px 0;
-}
-
-/* Answer paragraph */
-.faq-item p {
-    font-size: 15px;
-    line-height: 1.85;                /* roomy line-height to match screenshot */
-    color: #7b7f86;                   /* desaturated gray like screenshot */
-    max-width: 520px;                 /* limit line length to match screenshot column width */
-    margin: 0;
-}
-
-/* Small vertical spacer between items (if you want extra breathing room) */
-.faq-item + .faq-item {
-    margin-top: 0;
-}
-
-/* =========================
-   Responsive adjustments
-   ========================= */
-
-@media (max-width: 1100px) {
-    .faq {
-        padding: 100px 6% 80px;
-    }
-    .faq > h2 {
-        font-size: 48px;
-        margin-bottom: 80px;
-    }
-    .faq-items {
-        grid-column-gap: 80px;
-        grid-row-gap: 80px;
-    }
-    .faq-item p {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 760px) {
-    .faq {
-        padding: 80px 6% 60px;
-    }
-    .faq > h2 {
-        font-size: 40px;
-        letter-spacing: 4px;
-        margin-bottom: 60px;
-    }
-    .faq-items {
-        grid-template-columns: 1fr;   /* collapse to single column on small screens */
-        grid-column-gap: 0;
-        grid-row-gap: 48px;
-    }
-    .faq-item h3 {
-        font-size: 15px;
-    }
-    .faq-item p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-}
-/* Footer Section*/
-/* Footer (pixel-accurate to provided screenshot) */
-.site-footer {
-  width: 100%;
-  background: #0B1626;              /* dark navy background from screenshot */
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Inner container centers content and constrains width */
-.site-footer__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 20px 6% ;                /* vertical padding approximates screenshot height */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #fff;
+  color: #202020;
+}
+
+/* NAVBAR */
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  min-height: 72px;                 /* visual height similar to screenshot */
+  align-items: center;
+  padding: 30px 80px;
 }
 
-/* Brand block (left) */
-.site-footer__brand {
+.nav-links {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  gap: 40px;
+  list-style: none;
+  
 }
 
-/* Logo image */
-.brand__logo {
-  display: block;
-  width: 38px;                      /* approximate icon size from screenshot */
-  height: 38px;
-  object-fit: contain;
-}
-
-/* Brand name / wordmark */
-.brand__name {
-  color: #FFFFFF;
-  font-size: 18px;                  /* matches bold small wordmark */
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* Social icons (right) */
-.site-footer__social {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-/* circular white buttons holding dark glyphs */
-.social__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #FFFFFF;              /* white circle as in screenshot */
+.nav-links a {
+  color: #f3eeee;
   text-decoration: none;
-  box-shadow: none;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  font-weight: 700;
 }
 
-/* Small SVG inside should be the dark navy color to match screenshot */
-.social__btn svg { display: block; }
-
-/* Hover/focus affordance */
-.social__btn:hover,
-.social__btn:focus {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(11,22,38,0.25);
-  outline: none;
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  background: url("images/Object.png") center/cover no-repeat;
+  padding-bottom: 150px;
 }
 
-/* Responsive behavior: center and stack items on small screens */
-@media (max-width: 640px) {
-  .site-footer__inner {
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-    padding: 18px 5%;
-    min-height: auto;
-  }
-
-  .site-footer__brand { justify-content: center; }
-  .site-footer__social { justify-content: center; }
+.hero-content h1 {
+  font-size: 80px;
+  font-weight: 700;
+  margin-top: 120px;
 }
 
-
-
-
-
-/* ======================================
-   RESPONSIVE DESIGN
-======================================= */
-
-@media (max-width: 800px) {
-    header {
-        padding: 20px 30px;
-    }
-
-    main h1 {
-        font-size: 2.8rem;
-    }
-
-    nav ul {
-        gap: 20px;
-    }
+.hero-subtitle span {
+  margin: 0 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 
-@media (max-width: 500px) {
-    main h1 {
-        font-size: 2rem;
-    }
+.btn-register {
+  margin-top: 40px;
+  padding: 18px 55px;
+  border-radius: 30px;
+  border: none;
+  background: #C271FF;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
 
-    nav ul {
-        display: none; /* hide menu (simple mobile version) */
-    }
+/* LEARN FROM PROS */
+.learn-from-pros h2 .purple {
+  color: #C271FF;
+}
 
-    main section button {
-        padding: 12px 30px;
-    }
+.pros-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.pro-item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.pro-item h3 {
+  margin-top: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.pro-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+  color:white;
 }
