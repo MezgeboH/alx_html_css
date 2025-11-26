@@ -1,5 +1,4 @@
-# 📘 Advanced HTML & CSS Project --- Figma to Code
-
+# ===== Radme me file on HTML & CSS Project ====
 This project is the continuation of the **Advanced HTML module**,
 focusing entirely on applying **modern CSS** to build a clean,
 responsive, and visually accurate webpage based on a provided Figma
@@ -9,7 +8,7 @@ design. The goal is to reproduce the UI **pixel-perfectly**, using
 All HTML and CSS code must be **fully W3C-compliant** and pass official
 validation.
 
-## 🎯 Project Overview
+#🎯 Project Overview
 
 This project challenges learners to convert a professional UI/UX design
 (provided in Figma) into a functioning web page. Learners will:
