@@ -93,3 +93,39 @@ body {
   opacity: 0.8;
   color:white;
 }
+
+/* -------------------------------
+   CSS for the Quotes
+-------------------------------- */
+.testimonial {
+  background: #C271FF;
+  color: white;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial__container {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+}
+
+.testimonial__photo img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.testimonial__content blockquote {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.testimonial__name {
+  font-weight: 700;
+}
+
+.testimonial__role {
+  opacity: 0.8;
+}
