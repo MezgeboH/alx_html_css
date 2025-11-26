@@ -258,31 +258,79 @@ body {
   .tutorial-grid { grid-template-columns: 1fr; }
   .popular-tutorials h2 { font-size: 2rem; }
 }
-/* FAQ */
-.faq {
-  padding: 80px;
-  background: #f0f0f0;
-}
 
-.faq-items {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-/* FOOTER */
-.site-footer {
-  background: #202020;
+/* -------------------------------
+   FREE MEMBERSHIP SECTION
+-------------------------------- */
+.register {
+  background: #071629;           /* Dark blue background */
   color: white;
-  padding: 40px 80px;
+  text-align: center;
+  padding: 80px 20px;            /* Top/bottom spacing */
+}
+
+.register h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* FEATURE GRID */
+.register .features {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;                     /* Space between items */
+  flex-wrap: wrap;               /* Responsive */
+  max-width: 1100px;
+  margin: 0 auto 60px auto;      /* Center + space below */
+}
+.register.highlight {
+  color: #C271FF;
+}
+.register .features div {
+  max-width: 220px;
 }
 
-.site-footer__social a {
-  margin-left: 20px;
-  color: white;
+.register .features img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
 }
+
+.register .features h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.register .features p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.8;                  /* Matches the design’s faded text */
+}
+
+/* BUTTON */
+.register button {
+  background: #C271FF;           /* Purple button */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.register button:hover {
+  opacity: 0.85;
+}
+
+
+
+
+
+
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -296,3 +344,4 @@ body {
   .hero-content h1 { font-size: 50px; }
   .pros-container { gap: 30px; }
 }
+
