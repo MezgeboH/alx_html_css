@@ -260,3 +260,70 @@ body {
   .tutorial-grid { grid-template-columns: 1fr; }
   .popular-tutorials h2 { font-size: 2rem; }
 }
+
+/* -------------------------------
+   CSS for FREE MEMBERSHIP SECTION
+-------------------------------- */
+.register {
+  background: #071629;           /* Dark blue background */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;            /* Top/bottom spacing */
+}
+
+.register h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* FEATURE GRID */
+.register .features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;                     /* Space between items */
+  flex-wrap: wrap;               /* Responsive */
+  max-width: 1100px;
+  margin: 0 auto 60px auto;      /* Center + space below */
+}
+.register.highlight {
+  color: #C271FF;
+}
+.register .features div {
+  max-width: 220px;
+}
+
+.register .features img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.register .features h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.register .features p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.8;                  /* Matches the design’s faded text */
+}
+
+/* BUTTON */
+.register button {
+  background: #C271FF;           /* Purple button */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.register button:hover {
+  opacity: 0.85;
+}
