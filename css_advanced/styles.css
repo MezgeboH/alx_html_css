@@ -366,3 +366,78 @@ body {
   opacity: 0.8;                    /* Slight fade like original design */
 }
 
+/* -------------------------------
+   FOOTER
+-------------------------------- */
+.site-footer {
+  background: #071826;     /* Very dark blue background */
+  padding: 60px 0;
+  color: white;
+}
+
+.site-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px;
+}
+
+/* Brand container */
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.site-footer__brand img {
+  height: 40px;           /* Adjust to match the SmileSchool logo size */
+  width: auto;
+}
+
+.brand__name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Social icons */
+.site-footer__social {
+  display: flex;
+  gap: 20px;
+}
+
+.social__btn svg {
+  width: 22px;
+  height: 22px;
+  fill: white;
+  transition: opacity 0.3s ease;
+}
+
+.social__btn:hover svg {
+  opacity: 0.7;
+}
+
+/* Footer bottom spacing */
+.site-footer p {
+  margin-top: 30px;
+  opacity: 0.6;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .pros-container { flex-wrap: wrap; gap: 40px; }
+  .tutorial-grid { grid-template-columns: repeat(2, 1fr); }
+  .features { flex-wrap: wrap; gap: 40px; }
+  .faq-items { grid-template-columns: 1fr; }
+}
+
+@media(max-width:640px){
+  .hero-content h1 { font-size: 50px; }
+  .pros-container { gap: 30px; }
+}
+
