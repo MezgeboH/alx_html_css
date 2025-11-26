@@ -327,3 +327,42 @@ body {
 .register button:hover {
   opacity: 0.85;
 }
+
+/* -------------------------------
+   F.A.Q. SECTION
+-------------------------------- */
+.faq {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+/* FAQ grid layout */
+.faq-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 60px 80px;                 /* row-gap / column-gap */
+}
+
+/* Individual FAQ item */
+.faq-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.faq-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  opacity: 0.8;                    /* Slight fade like original design */
+}
+
