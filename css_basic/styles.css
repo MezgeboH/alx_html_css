@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(150, 190, 224);
+    margin: 0;  
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    
+}
+
+main {
+    
+    display: flex;
+    flex-direction: row;
+    flex:auto;
+}
+
+article {
+    background: #a6a6a8;
+    flex:2;
+    overflow-y: auto;
+}
+
+aside {
+    
+    flex:1;
+    overflow-y: auto;
+}
