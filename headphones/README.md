@@ -106,7 +106,7 @@ Mobile-first workflow
 
 Start with the HTML skeleton
 
-Semantic tags: <header>, <section>, <nav>, <footer>
+Semantic tags: header, section, nav, footer
 
 Basic structure matching Figma frames
 
@@ -125,7 +125,6 @@ Variables:
   --text-color: #...;
   --font-main: 'Source Sans Pro', sans-serif;
 }
-
 
 Build layout using mobile-first approach
 
