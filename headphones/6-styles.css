@@ -1,0 +1,618 @@
+/* ---------------------- */
+/* RESET + VARIABLES */
+/* ---------------------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-light: #ffffff;
+    --text-muted: #cccccc;
+    --btn-color: #ff5c6c;
+    --font-main: "Source Sans Pro", sans-serif;
+}
+
+/* ---------------------- */
+/* GENERAL LAYOUT */
+/* ---------------------- */
+body {
+    font-family: var(--font-main);
+    background: #000;
+    color: var(--text-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ---------------------- */
+/* HEADER (Mobile-First) */
+/* ---------------------- */
+.header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    z-index: 20;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+/* Logo */
+.logo img {
+    height: 40px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: block;
+    font-size: 28px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* Checkbox toggle */
+#menu-toggle {
+    display: none;
+}
+
+/* Navigation Menu - Mobile */
+.nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav ul li a:hover {
+    color: #e96363;
+}
+
+/* Show menu when hamburger checked */
+#menu-toggle:checked ~ .nav ul {
+    display: flex;
+}
+
+/* Order on mobile: hamburger → logo → nav */
+.hamburger { order: 0; }
+.logo { order: 1; }
+.nav { order: 2; }
+
+/* ---------------------- */
+/* HERO SECTION */
+/* ---------------------- */
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(to bottom, rgba(15,20,40,0.3), rgba(5,10,20,0.9)),
+        url("images/headphones_hero_1.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.sub {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 700px;
+    margin: auto;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.btn-primary {
+    background: var(--btn-color);
+    padding: 12px 35px;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(255, 92, 108, 0.4);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* ---------------------- */
+/* TABLET BREAKPOINT */
+/* ---------------------- */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    /* Header */
+    .header-container {
+        gap: 25px;
+    }
+
+    .hamburger {
+        font-size: 30px;
+    }
+
+    .nav ul {
+        top: 70px;
+        left: 20px;
+        padding: 1.2rem;
+        border-radius: 12px;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .sub, .description {
+        font-size: 16px;
+    }
+}
+
+/* ---------------------- */
+/* DESKTOP BREAKPOINT */
+/* ---------------------- */
+@media (min-width: 1025px) {
+
+    /* Hide Hamburger */
+    .hamburger {
+        display: none;
+    }
+
+    /* Header */
+    .header-container {
+        justify-content: space-between;
+    }
+
+    /* Navigation */
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        position: static;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .nav ul li a {
+        font-size: 13px;
+        color: var(--text-light);
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .nav ul li a:hover {
+        color: #e96363;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .sub, .description {
+        font-size: 15px;
+    }
+}
+
+/* ---------------------- */
+/* HERO IMAGE ADJUSTMENT FOR SMALL SCREENS */
+/* ---------------------- */
+@media (max-width: 768px) {
+    .hero {
+        background:
+            linear-gradient(to bottom, rgba(20,20,30,0.2), rgba(10,10,20,0.85)),
+            url("images/headphones_hero_2.jpg") center/cover no-repeat;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+}
+
+/* ---------------------- */
+/* WHAT WE DO SECTION */
+/* ---------------------- */
+
+.what-we-do {
+    padding: 80px 0;
+    background: #ffffff;
+    text-align: center;
+    color: #333;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    max-width: 650px;
+    margin: 0 auto 60px auto;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* FEATURES GRID */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* Individual Feature Box */
+.feature-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.feature-item i {
+    font-size: 55px;
+    color: #ff5c6c;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.feature-item h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #222;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* ---------------------- */
+/* FEATURES RESPONSIVE */
+/* ---------------------- */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-description {
+        font-size: 14px;
+    }
+}
+
+/* ---------------------- */
+/* OUR RESULTS SECTION (No image, colorful pentagons) */
+/* ---------------------- */
+.results {
+    background: linear-gradient(to bottom, #0a0a1f, #00001f);
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.results-content h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.results-content p {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Grid */
+.results-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Pentagon base */
+.pentagon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.pentagon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    clip-path: inherit;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* subtle border */
+    background: rgba(255, 255, 255, 0.05); /* subtle highlight */
+    z-index: 0;
+}
+
+.pentagon .value,
+.pentagon .label {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.pentagon .value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.pentagon .label {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Hover effect */
+.pentagon:hover {
+    transform: scale(1.1);
+}
+
+/* Individual pentagon colors */
+.pentagon:nth-child(1) {
+    background: linear-gradient(135deg, #ff5c6c, #ff8a6e);
+}
+
+.pentagon:nth-child(2) {
+    background: linear-gradient(135deg, #6c5cff, #8a6eff);
+}
+
+.pentagon:nth-child(3) {
+    background: linear-gradient(135deg, #5cff8a, #6effa6);
+}
+
+.pentagon:nth-child(4) {
+    background: linear-gradient(135deg, #ffb85c, #ffc78a);
+}
+
+/* ---------------------- */
+/* RESPONSIVE FIXES */
+/* ---------------------- */
+
+/* Tablet: two per row */
+@media (min-width: 481px) and (max-width: 768px) {
+    .results {
+        padding: 70px 15px;
+    }
+
+    .results-grid {
+        gap: 25px;
+    }
+
+    .pentagon {
+        flex: 0 0 calc(50% - 25px);
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 480px) {
+    .results {
+        padding: 50px 10px;
+    }
+
+    .results-content h2 {
+        font-size: 22px;
+    }
+
+    .results-content p {
+        font-size: 14px;
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .results-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .pentagon {
+        width: 100px;
+        height: 100px;
+        flex: 0 0 auto;
+        padding-top: 5px;
+    }
+
+    .pentagon .value {
+        font-size: 18px;
+    }
+
+    .pentagon .label {
+        font-size: 10px;
+    }
+}
+
+/* ---------------------- */
+/* CONTACT US SECTION */
+/* ---------------------- */
+.contact {
+    padding: 100px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.contact-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #0a1a2a;
+    margin-bottom: 40px;
+}
+
+/* --- Form Layout --- */
+.contact-form {
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 12px;
+    color: #1b2a3a;
+    margin-bottom: 8px;
+    opacity: 0.7;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px 0;
+    margin-bottom: 25px;
+    font-size: 14px;
+    outline: none;
+    resize: none;
+}
+
+.contact-form textarea {
+    height: 80px;
+}
+
+/* --- Button --- */
+.btn-contact {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    background: #ff5c6c;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 92, 108, 0.35);
+}
+
+.btn-contact:hover {
+    opacity: 0.9;
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 480px) {
+    .contact {
+        padding: 70px 15px;
+    }
+}
+
+/* ---------------------- */
+/* FOOTER */
+/* ---------------------- */
+
+.footer {
+    background: #0c1222;
+    padding: 60px 0 40px;
+    color: #fff;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Top row: logo left, icons right */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    height: 40px;
+}
+
+/* Social icons */
+.footer-social a {
+    color: #fff;
+    font-size: 26px;
+    margin-left: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social a:hover {
+    opacity: 0.7;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* Mobile: stack items vertically */
+@media (max-width: 600px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
+    }
+}
